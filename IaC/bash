@@ -1,0 +1,3 @@
+terraform init   # Initialize Terraform (downloads provider plugins)
+terraform plan   # Preview infrastructure changes
+terraform apply  # Apply changes to create resources
