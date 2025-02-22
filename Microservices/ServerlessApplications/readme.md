@@ -9,4 +9,9 @@ Security: Leverage IAM roles to limit what each function can access and use API 
 DevOps: Serverless deployments are typically integrated with CI/CD pipelines, and monitoring is handled via CloudWatch Logs and AWS X-Ray.
 Assorted Code Example:
 
-Example: A simple AWS Lambda function in Python (handler.py)
+## Components: 
+A simple AWS Lambda function in Python (handler.py)
+
+A simple AWS Lambda function in Python (handler.py)
+
+A simple AWS SAM template (template.yaml) to deploy the Lambda function via AWS Serverless Application Model (SAM)
