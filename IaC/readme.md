@@ -5,6 +5,8 @@ Imagine a company managing cloud infrastructure manually. Every time a new serve
 
 A common tool for this is Terraform, which allows you to define infrastructure in a human-readable format and apply changes with version control.
 
+### Manually provisioning cloud infrastructure is slow and prone to errors. IaC automates infrastructure deployment using code, ensuring consistency across environments.
+
 ## Security & DevOps Considerations:
 Security: Use role-based access control (RBAC) to limit infrastructure modifications, encrypt secrets, and store state files securely (e.g., in AWS S3 with encryption).
 DevOps: CI/CD pipelines can apply infrastructure changes automatically after review, ensuring all environments (dev, staging, production) remain consistent.
