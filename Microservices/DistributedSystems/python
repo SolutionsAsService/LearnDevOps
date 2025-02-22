@@ -1,0 +1,6 @@
+# producer.py
+from tasks import process_data
+
+# Send a task to the distributed system
+result = process_data.delay("sample input")
+print("Task submitted, result:", result.get(timeout=10))
