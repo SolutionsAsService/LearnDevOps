@@ -7,8 +7,13 @@ A common tool for this is Terraform, which allows you to define infrastructure i
 
 ### Manually provisioning cloud infrastructure is slow and prone to errors. IaC automates infrastructure deployment using code, ensuring consistency across environments.
 
-## Security & DevOps Considerations:
-Security: Use role-based access control (RBAC) to limit infrastructure modifications, encrypt secrets, and store state files securely (e.g., in AWS S3 with encryption).
-DevOps: CI/CD pipelines can apply infrastructure changes automatically after review, ensuring all environments (dev, staging, production) remain consistent.
-Assorted Code Example:
-Example: Defining an AWS EC2 instance using Terraform.
+## Security Considerations
+
+RBAC (Role-Based Access Control): Restricts infrastructure changes to authorized users.
+Secrets Management: Store Terraform state files securely in AWS S3 with encryption.
+State Locking: Use DynamoDB state locking to prevent simultaneous deployments.
+
+## DevOps Considerations
+
+CI/CD Integration: Automate infrastructure changes using GitHub Actions.
+Terraform Workspaces: Manage multiple environments (dev, staging, production) separately.
