@@ -7,7 +7,12 @@ A team developing a web application manually deploys code to production, leading
 ## Manually deploying applications leads to inconsistent releases and errors. CI/CD automates testing and deployment, ensuring reliability.
 
 ## Security & DevOps Considerations:
-Security: Store secrets securely (e.g., GitHub Secrets, AWS Secrets Manager). Scan dependencies for vulnerabilities.
-DevOps: Automate testing and deployments using GitHub Actions, Jenkins, or GitLab CI/CD.
-Assorted Code Example:
-Example: A GitHub Actions CI/CD pipeline for deploying a Python Flask app to AWS Elastic Beanstalk.
+
+Security Considerations
+Secrets Management: Store AWS credentials securely using GitHub Secrets.
+Dependency Scanning: Use tools like Snyk to detect vulnerabilities in dependencies.
+Branch Protection Rules: Require code reviews before merging changes.
+
+DevOps Considerations
+Automated Testing: CI/CD ensures only tested code is deployed.
+Rollback Strategy: Enable rollback to a previous stable release in case of failure.
