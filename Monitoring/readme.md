@@ -6,7 +6,12 @@ A company’s production servers experience performance issues, but engineers la
 #### Without monitoring, debugging production issues is difficult. Observability tools like Prometheus help track logs, performance, and errors in real time.
 
 ## Security & DevOps Considerations:
-Security: Restrict log access, mask sensitive data in logs, and enable encrypted data transport.
-DevOps: Use tools like Prometheus, Grafana, and ELK (Elasticsearch, Logstash, Kibana) for logging and monitoring.
-Assorted Code Example:
-Example: Setting up Prometheus monitoring for a Node.js application.
+
+Security Considerations
+Access Control: Restrict Prometheus metrics endpoint to internal use only.
+Data Encryption: Use TLS for secure transmission of logs.
+Anomaly Detection: Set up alerts for unusual traffic spikes.
+
+DevOps Considerations
+Grafana Dashboards: Visualize CPU, memory, and API request trends.
+Alerting: Send alerts via Slack or PagerDuty when an issue is detected.
