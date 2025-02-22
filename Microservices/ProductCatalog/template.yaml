@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catalog-service
+spec:
+  replicas: 2  # Two replicas for load balancing
+  template:
+    spec:
+      containers:
+      - name: catalog-service
+        image: your-docker-repo/catalog-service:latest
+        ports:
+        - containerPort: 5002
