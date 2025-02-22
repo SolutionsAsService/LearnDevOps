@@ -9,11 +9,11 @@ A common tool for this is Terraform, which allows you to define infrastructure i
 
 ## Security Considerations
 
-RBAC (Role-Based Access Control): Restricts infrastructure changes to authorized users.
-Secrets Management: Store Terraform state files securely in AWS S3 with encryption.
-State Locking: Use DynamoDB state locking to prevent simultaneous deployments.
+##### RBAC (Role-Based Access Control): Restricts infrastructure changes to authorized users.
+##### Secrets Management: Store Terraform state files securely in AWS S3 with encryption.
+##### State Locking: Use DynamoDB state locking to prevent simultaneous deployments.
 
 ## DevOps Considerations
 
-CI/CD Integration: Automate infrastructure changes using GitHub Actions.
-Terraform Workspaces: Manage multiple environments (dev, staging, production) separately.
+#### CI/CD Integration: Automate infrastructure changes using GitHub Actions.
+#### Terraform Workspaces: Manage multiple environments (dev, staging, production) separately.
