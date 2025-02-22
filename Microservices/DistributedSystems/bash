@@ -1,0 +1,2 @@
+# Command to start a Celery worker
+celery -A tasks worker --loglevel=info
