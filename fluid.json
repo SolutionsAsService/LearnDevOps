@@ -1,0 +1,5 @@
+{
+  "project": "LearnDevOps",
+  "static_dir": ".",
+  "routes": [{"pattern": "/", "target": "static"}]
+}

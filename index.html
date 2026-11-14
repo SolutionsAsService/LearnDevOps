@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LearnDevOps</title>
+<meta name="description" content="Five hands-on DevOps tracks: CI/CD, GitOps, Infrastructure as Code, Microservices and Monitoring.">
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0b0f14; --panel:#131a23; --fg:#e8edf3; --muted:#a9b4c2; --line:#2a3442;
+  --cicd:#4ec94e; --gitops:#e070e0; --iac:#3ccfd9; --micro:#6fa8ff; --mon:#e5c84b;
+  --signal:#ff6b6b; --ink:#0b0f14;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    color-scheme: light;
+    --bg:#f6f7f9; --panel:#ffffff; --fg:#14181f; --muted:#4a5565; --line:#c9d1dc;
+    --cicd:#17691f; --gitops:#8a1f8a; --iac:#00616b; --micro:#1d4fb8; --mon:#7a5c00;
+    --signal:#b3261e; --ink:#ffffff;
+  }
+}
+:root[data-theme="light"]{
+  color-scheme: light;
+  --bg:#f6f7f9; --panel:#ffffff; --fg:#14181f; --muted:#4a5565; --line:#c9d1dc;
+  --cicd:#17691f; --gitops:#8a1f8a; --iac:#00616b; --micro:#1d4fb8; --mon:#7a5c00;
+  --signal:#b3261e; --ink:#ffffff;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);}
+body{font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;flex-wrap:wrap;padding:6px 0}
+.brand{font-weight:700;text-decoration:none;font-size:18px;padding:10px 0;min-height:44px;display:inline-flex;align-items:center}
+nav a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0 12px;text-decoration:none;color:var(--muted)}
+nav a:focus-visible,a:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+h1{font-size:clamp(22px,3.2vw,34px);line-height:1.2;margin:4px 0 8px;font-weight:750}
+.lede{color:var(--muted);margin:0 0 12px;max-width:70ch}
+figure.hero{margin:0}
+.fig-desk{display:block;width:100%;height:auto}
+.fig-phone{display:none;width:100%;height:auto}
+.fig-desk text.t{fill:var(--fg)} .fig-desk text.m{fill:var(--muted)}
+.fig-phone text.t{fill:var(--fg)} .fig-phone text.m{fill:var(--muted)}
+.fig-desk text.num,.fig-phone text.num{fill:var(--ink);font-weight:700}
+.fig-desk .n{font-size:15px} .fig-desk .h{font-size:19px;font-weight:700}
+.fig-phone .n{font-size:14px} .fig-phone .h{font-size:17px;font-weight:700}
+.path{stroke:var(--signal);stroke-width:4;fill:none;stroke-linecap:round}
+.node{stroke:var(--bg);stroke-width:4}
+a.node-link{text-decoration:none}
+a.node-link:focus-visible{outline:none}
+a.node-link:focus-visible circle{stroke:var(--fg);stroke-width:3}
+section{margin:28px 0}
+h2{font-size:20px;margin:0 0 12px}
+.tracks{list-style:none;padding:0;margin:0;display:grid;gap:8px;grid-template-columns:1fr}
+.tracks a{display:flex;align-items:center;gap:12px;min-height:44px;padding:10px 14px;background:var(--panel);border:1px solid var(--line);border-left:6px solid var(--c);border-radius:6px;text-decoration:none}
+.tracks strong{min-width:110px}
+.tracks span{color:var(--muted)}
+.start{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+.start ol{margin:0;padding-left:22px}
+.start li{margin:6px 0}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px}
+pre{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:10px 12px;overflow-x:auto;margin:8px 0}
+footer{border-top:1px solid var(--line);margin-top:32px;padding:16px 0 28px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 16px}
+footer a{display:inline-flex;align-items:center;min-height:44px;color:var(--fg)}
+@media (max-width:600px){
+  .fig-desk{display:none}
+  .fig-phone{display:block}
+  .tracks a{flex-wrap:wrap}
+  .tracks strong{min-width:0}
+  nav a{padding:0 8px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#top">LearnDevOps</a>
+    <nav aria-label="Tracks">
+      <a href="CI-CD/readme.md">CI/CD</a>
+      <a href="GitOps/readme.md">GitOps</a>
+      <a href="IaC/readme.md">IaC</a>
+      <a href="Microservices/E-Commerce/readme.md">Microservices</a>
+      <a href="Monitoring/readme.md">Monitoring</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <h1>Five DevOps tracks, one path a change takes</h1>
+
+    <figure class="hero" aria-label="Diagram: a change moves through CI/CD, GitOps, IaC, Microservices and Monitoring">
+      <svg class="fig-desk" viewBox="0 0 1000 440" role="img" aria-labelledby="d-title d-desc">
+        <title id="d-title">The five tracks as one path</title>
+        <desc id="d-desc">CI/CD, GitOps, IaC, Microservices and Monitoring, joined by a red path from left to right.</desc>
+        <path class="path" d="M100 150 L900 150"/>
+        <path class="path" d="M880 136 L900 150 L880 164" />
+        <a class="node-link" href="CI-CD/readme.md">
+          <circle class="node" cx="100" cy="150" r="36" style="fill:var(--cicd)"/>
+          <text class="num" x="100" y="157" text-anchor="middle" font-size="22">1</text>
+        </a>
+        <a class="node-link" href="GitOps/readme.md">
+          <circle class="node" cx="300" cy="150" r="36" style="fill:var(--gitops)"/>
+          <text class="num" x="300" y="157" text-anchor="middle" font-size="22">2</text>
+        </a>
+        <a class="node-link" href="IaC/readme.md">
+          <circle class="node" cx="500" cy="150" r="36" style="fill:var(--iac)"/>
+          <text class="num" x="500" y="157" text-anchor="middle" font-size="22">3</text>
+        </a>
+        <a class="node-link" href="Microservices/E-Commerce/readme.md">
+          <circle class="node" cx="700" cy="150" r="36" style="fill:var(--micro)"/>
+          <text class="num" x="700" y="157" text-anchor="middle" font-size="22">4</text>
+        </a>
+        <a class="node-link" href="Monitoring/readme.md">
+          <circle class="node" cx="900" cy="150" r="36" style="fill:var(--mon)"/>
+          <text class="num" x="900" y="157" text-anchor="middle" font-size="22">5</text>
+        </a>
+
+        <text class="t h" x="100" y="226" text-anchor="middle">CI/CD</text>
+        <text class="m n" x="100" y="252" text-anchor="middle">Build, test and deploy</text>
+        <text class="m n" x="100" y="272" text-anchor="middle">on every change</text>
+        <text class="m n" x="100" y="302" text-anchor="middle">GitHub Secrets, Snyk</text>
+
+        <text class="t h" x="300" y="226" text-anchor="middle">GitOps</text>
+        <text class="m n" x="300" y="252" text-anchor="middle">Git holds the desired</text>
+        <text class="m n" x="300" y="272" text-anchor="middle">state of Kubernetes</text>
+        <text class="m n" x="300" y="302" text-anchor="middle">ArgoCD or Flux sync</text>
+
+        <text class="t h" x="500" y="226" text-anchor="middle">IaC</text>
+        <text class="m n" x="500" y="252" text-anchor="middle">Provision cloud infra</text>
+        <text class="m n" x="500" y="272" text-anchor="middle">from code, with review</text>
+        <text class="m n" x="500" y="302" text-anchor="middle">Terraform, S3, DynamoDB</text>
+
+        <text class="t h" x="700" y="226" text-anchor="middle">Microservices</text>
+        <text class="m n" x="700" y="252" text-anchor="middle">Five services, from auth</text>
+        <text class="m n" x="700" y="272" text-anchor="middle">to serverless</text>
+        <text class="m n" x="700" y="296" text-anchor="middle">AuthService</text>
+        <text class="m n" x="700" y="314" text-anchor="middle">DistributedSystems</text>
+        <text class="m n" x="700" y="332" text-anchor="middle">E-Commerce</text>
+        <text class="m n" x="700" y="350" text-anchor="middle">ProductCatalog</text>
+        <text class="m n" x="700" y="368" text-anchor="middle">ServerlessApplications</text>
+
+        <text class="t h" x="900" y="226" text-anchor="middle">Monitoring</text>
+        <text class="m n" x="900" y="252" text-anchor="middle">Logs and metrics in</text>
+        <text class="m n" x="900" y="272" text-anchor="middle">real time</text>
+        <text class="m n" x="900" y="302" text-anchor="middle">Prometheus, Grafana</text>
+        <text class="m n" x="900" y="320" text-anchor="middle">Slack or PagerDuty alerts</text>
+      </svg>
+
+      <svg class="fig-phone" viewBox="0 0 343 600" role="img" aria-labelledby="p-title p-desc">
+        <title id="p-title">The five tracks as one path</title>
+        <desc id="p-desc">CI/CD, GitOps, IaC, Microservices and Monitoring, joined by a red path from top to bottom.</desc>
+        <path class="path" d="M40 40 L40 470"/>
+        <a class="node-link" href="CI-CD/readme.md">
+          <circle class="node" cx="40" cy="40" r="26" style="fill:var(--cicd)"/>
+          <text class="num" x="40" y="47" text-anchor="middle" font-size="18">1</text>
+          <text class="t h" x="84" y="36">CI/CD</text>
+          <text class="m n" x="84" y="58">Build, test and deploy on every change</text>
+          <text class="m n" x="84" y="76">GitHub Secrets, Snyk</text>
+        </a>
+        <a class="node-link" href="GitOps/readme.md">
+          <circle class="node" cx="40" cy="150" r="26" style="fill:var(--gitops)"/>
+          <text class="num" x="40" y="157" text-anchor="middle" font-size="18">2</text>
+          <text class="t h" x="84" y="146">GitOps</text>
+          <text class="m n" x="84" y="168">Git holds the desired state of Kubernetes</text>
+          <text class="m n" x="84" y="186">ArgoCD or Flux sync</text>
+        </a>
+        <a class="node-link" href="IaC/readme.md">
+          <circle class="node" cx="40" cy="260" r="26" style="fill:var(--iac)"/>
+          <text class="num" x="40" y="267" text-anchor="middle" font-size="18">3</text>
+          <text class="t h" x="84" y="256">IaC</text>
+          <text class="m n" x="84" y="278">Provision cloud infra from code</text>
+          <text class="m n" x="84" y="296">Terraform, S3, DynamoDB</text>
+        </a>
+        <a class="node-link" href="Microservices/E-Commerce/readme.md">
+          <circle class="node" cx="40" cy="370" r="26" style="fill:var(--micro)"/>
+          <text class="num" x="40" y="377" text-anchor="middle" font-size="18">4</text>
+          <text class="t h" x="84" y="366">Microservices</text>
+          <text class="m n" x="84" y="388">Five services, from auth to serverless</text>
+          <text class="m n" x="84" y="406">AuthService, DistributedSystems,</text>
+          <text class="m n" x="84" y="424">E-Commerce, ProductCatalog,</text>
+          <text class="m n" x="84" y="442">ServerlessApplications</text>
+        </a>
+        <a class="node-link" href="Monitoring/readme.md">
+          <circle class="node" cx="40" cy="480" r="26" style="fill:var(--mon)"/>
+          <text class="num" x="40" y="487" text-anchor="middle" font-size="18">5</text>
+          <text class="t h" x="84" y="476">Monitoring</text>
+          <text class="m n" x="84" y="498">Logs and metrics in real time</text>
+          <text class="m n" x="84" y="516">Prometheus, Grafana, Slack or PagerDuty</text>
+        </a>
+      </svg>
+    </figure>
+
+    <section aria-labelledby="tracks-h">
+      <h2 id="tracks-h">The tracks</h2>
+      <ul class="tracks">
+        <li><a href="CI-CD/readme.md" style="--c:var(--cicd)"><strong>CI/CD</strong><span>Automated build, test and deploy, with rollback to a stable release.</span></a></li>
+        <li><a href="GitOps/readme.md" style="--c:var(--gitops)"><strong>GitOps</strong><span>Declarative Kubernetes state in Git, synced with ArgoCD or Flux.</span></a></li>
+        <li><a href="IaC/readme.md" style="--c:var(--iac)"><strong>IaC</strong><span>Terraform infrastructure with remote state, locking and workspaces.</span></a></li>
+        <li><a href="Microservices/E-Commerce/readme.md" style="--c:var(--micro)"><strong>Microservices</strong><span>Five service examples: AuthService, DistributedSystems, E-Commerce, ProductCatalog, ServerlessApplications.</span></a></li>
+        <li><a href="Monitoring/readme.md" style="--c:var(--mon)"><strong>Monitoring</strong><span>Prometheus and Grafana for logs, metrics and alerts.</span></a></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="start-h">
+      <h2 id="start-h">How to start</h2>
+      <div class="start">
+        <ol>
+          <li>Clone the repository:
+<pre>git clone https://github.com/SolutionsAsService/LearnDevOps
+cd LearnDevOps</pre></li>
+          <li>Pick a track above and open its <code>readme.md</code> for the use case and the security and DevOps notes.</li>
+          <li>Run the example files in that track's folder, such as <code>CI-CD/deploy.yml</code> or <code>Monitoring/prometheus.yml</code>.</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>MIT License, SolutionsAsService</span>
+    <a href="CONTRIBUTING.md">Contributing</a>
+    <a href="LICENSE">License</a>
+  </footer>
+</div>
+</body>
+</html>
