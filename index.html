@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LearnDevOps: five tracks</title>
+<meta name="description" content="LearnDevOps: five hands-on tracks covering CI/CD, GitOps, Infrastructure as Code, Microservices and Monitoring.">
+<style>
+  :root {
+    --bg: #0b0f14;
+    --ink: #f4efe4;
+    --muted: #a9b2bd;
+    --accent: #f2b134;
+    --rule: #26303b;
+    --card: #131a22;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+  header.top {
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 12px; padding: 16px 0 4px; flex-wrap: wrap;
+  }
+  header.top .name { font-weight: 800; letter-spacing: .02em; font-size: 18px; }
+  header.top nav a { color: var(--muted); margin-left: 16px; text-decoration: none; }
+  header.top nav a:hover, header.top nav a:focus { color: var(--accent); }
+
+  .hero { text-align: center; padding: 8px 0 0; }
+  .hero h1 {
+    margin: 4px 0 4px; font-size: clamp(26px, 4.4vw, 40px); line-height: 1.1; letter-spacing: -.01em;
+  }
+  .hero p.lede { margin: 0 auto 8px; color: var(--muted); max-width: 640px; }
+  .figure { display: block; width: min(100%, 560px); height: auto; margin: 0 auto; }
+
+  h2 { font-size: 22px; margin: 40px 0 12px; }
+  .tracks { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  .tracks li {
+    background: var(--card); border: 1px solid var(--rule); border-left: 4px solid var(--accent);
+    padding: 14px 16px; border-radius: 6px;
+  }
+  .tracks h3 { margin: 0 0 4px; font-size: 17px; }
+  .tracks p { margin: 0; color: var(--muted); font-size: 15px; }
+  .tracks a { color: var(--ink); }
+
+  ol.steps { padding-left: 22px; margin: 0; }
+  ol.steps li { margin: 0 0 8px; }
+  code, pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 14px; background: var(--card); border: 1px solid var(--rule); border-radius: 4px;
+  }
+  code { padding: 1px 5px; }
+  pre { padding: 12px 14px; overflow-x: auto; max-width: 100%; margin: 8px 0 0; }
+
+  footer { margin: 48px 0 24px; padding-top: 16px; border-top: 1px solid var(--rule);
+    color: var(--muted); font-size: 14px; }
+  footer a { color: var(--muted); }
+  footer a:hover, footer a:focus { color: var(--accent); }
+
+  header.top nav a, footer a, .tracks a, .steps a {
+    display: inline-flex; align-items: center; min-height: 44px; min-width: 44px;
+  }
+  .tracks a { min-width: 0; }
+  a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <span class="name">LearnDevOps</span>
+    <nav aria-label="Repository">
+      <a href="#tracks">Tracks</a>
+      <a href="#start">Start</a>
+      <a href="CONTRIBUTING.md">Contribute</a>
+    </nav>
+  </header>
+
+  <section class="hero" aria-labelledby="title">
+    <h1 id="title">Five DevOps tracks, each with its own readme</h1>
+    <p class="lede">Hands-on examples for delivery, infrastructure, services and observability.</p>
+
+    <svg class="figure" viewBox="0 0 560 560" role="img" aria-labelledby="figtitle figdesc">
+      <title id="figtitle">Five LearnDevOps tracks in a ring</title>
+      <desc id="figdesc">CI/CD, GitOps, IaC, Microservices and Monitoring arranged in a ring around the count of five tracks.</desc>
+      <circle cx="280" cy="280" r="200" fill="none" stroke="#f2b134" stroke-width="3"/>
+      <circle cx="280" cy="280" r="150" fill="none" stroke="#26303b" stroke-width="2" stroke-dasharray="4 8"/>
+      <text x="280" y="286" text-anchor="middle" font-size="110" font-weight="800" fill="#f2b134" font-family="system-ui, Helvetica, Arial, sans-serif">5</text>
+      <text x="280" y="332" text-anchor="middle" font-size="22" font-weight="700" letter-spacing="6" fill="#f4efe4" font-family="system-ui, Helvetica, Arial, sans-serif">TRACKS</text>
+
+      <!-- CI/CD: (280,80) -->
+      <g>
+        <rect x="195" y="48" width="170" height="64" rx="6" fill="#f2b134"/>
+        <text x="280" y="75" text-anchor="middle" font-size="19" font-weight="800" fill="#0b0f14" font-family="system-ui, Helvetica, Arial, sans-serif">CI/CD</text>
+        <text x="280" y="97" text-anchor="middle" font-size="13" fill="#0b0f14" font-family="system-ui, Helvetica, Arial, sans-serif">Build, test, deploy</text>
+      </g>
+      <!-- GitOps: (470,218) -->
+      <g>
+        <rect x="385" y="186" width="170" height="64" rx="6" fill="#f2b134"/>
+        <text x="470" y="213" text-anchor="middle" font-size="19" font-weight="800" fill="#0b0f14" font-family="system-ui, Helvetica, Arial, sans-serif">GitOps</text>
+        <text x="470" y="235" text-anchor="middle" font-size="13" fill="#0b0f14" font-family="system-ui, Helvetica, Arial, sans-serif">Git-driven Kubernetes</text>
+      </g>
+      <!-- IaC: (398,442) -->
+      <g>
+        <rect x="313" y="410" width="170" height="64" rx="6" fill="#f2b134"/>
+        <text x="398" y="437" text-anchor="middle" font-size="19" font-weight="800" fill="#0b0f14" font-family="system-ui, Helvetica, Arial, sans-serif">IaC</text>
+        <text x="398" y="459" text-anchor="middle" font-size="13" fill="#0b0f14" font-family="system-ui, Helvetica, Arial, sans-serif">Infrastructure as code</text>
+      </g>
+      <!-- Microservices: (162,442) -->
+      <g>
+        <rect x="77" y="410" width="170" height="64" rx="6" fill="#f2b134"/>
+        <text x="162" y="437" text-anchor="middle" font-size="19" font-weight="800" fill="#0b0f14" font-family="system-ui, Helvetica, Arial, sans-serif">Microservices</text>
+        <text x="162" y="459" text-anchor="middle" font-size="13" fill="#0b0f14" font-family="system-ui, Helvetica, Arial, sans-serif">Five service examples</text>
+      </g>
+      <!-- Monitoring: (90,218) -->
+      <g>
+        <rect x="5" y="186" width="170" height="64" rx="6" fill="#f2b134"/>
+        <text x="90" y="213" text-anchor="middle" font-size="19" font-weight="800" fill="#0b0f14" font-family="system-ui, Helvetica, Arial, sans-serif">Monitoring</text>
+        <text x="90" y="235" text-anchor="middle" font-size="13" fill="#0b0f14" font-family="system-ui, Helvetica, Arial, sans-serif">Logs, metrics, alerts</text>
+      </g>
+    </svg>
+  </section>
+
+  <section id="tracks" aria-labelledby="tracks-h">
+    <h2 id="tracks-h">The five tracks</h2>
+    <ul class="tracks">
+      <li>
+        <h3><a href="CI-CD/readme.md">CI/CD</a></h3>
+        <p>Automates building, testing and deploying an app, with secrets in GitHub Secrets and rollback.</p>
+      </li>
+      <li>
+        <h3><a href="GitOps/readme.md">GitOps</a></h3>
+        <p>Declares Kubernetes application state in Git and syncs it with ArgoCD or Flux.</p>
+      </li>
+      <li>
+        <h3><a href="IaC/readme.md">Infrastructure as Code</a></h3>
+        <p>Provisions cloud infrastructure with Terraform, with remote state and locking.</p>
+      </li>
+      <li>
+        <h3><a href="Microservices/">Microservices</a></h3>
+        <p>Five service examples: AuthService, ProductCatalog, E-Commerce, ServerlessApplications and DistributedSystems.</p>
+      </li>
+      <li>
+        <h3><a href="Monitoring/readme.md">Observability &amp; Monitoring</a></h3>
+        <p>Uses Prometheus and Grafana to watch logs, metrics and traffic, with alerts.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="start" aria-labelledby="start-h">
+    <h2 id="start-h">How to start</h2>
+    <ol class="steps">
+      <li>Clone this repository and change into it: <pre><code>git clone &lt;repository-url&gt;
+cd LearnDevOps</code></pre></li>
+      <li>Open the readme in the track you want, for example <code>IaC/readme.md</code>.</li>
+      <li>Read its use case and considerations, then run the code in that folder.</li>
+    </ol>
+  </section>
+
+  <footer>
+    <a href="README.md">README</a> &middot;
+    <a href="CONTRIBUTING.md">Contributing</a> &middot;
+    <a href="LICENSE">License</a>
+  </footer>
+
+</div>
+</body>
+</html>
